@@ -8,6 +8,9 @@ const pluginConfig = [
         name: 'disable-expensive-bundler-optimizations',
         configureWebpack(config, isServer) {
           return {
+            experiments: {
+              parallelCodeSplitting: true
+            },
             optimization: {
               // See https://github.com/facebook/docusaurus/discussions/11199
               concatenateModules: false,
